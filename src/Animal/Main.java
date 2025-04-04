@@ -1,3 +1,5 @@
+package Animal;
+
 public class Main {
     public static void main(String[] args) {
         Animal barsik = new Animal("Барсик");
