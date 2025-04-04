@@ -9,6 +9,11 @@ public class Cat extends Animal {
         this.hunger = false;
     }
 
+    public void eat(Bowl bowl) {
+        bowl.takeFood(appetite);
+    }
+
+
     public void run(int run) {
         if (run > 200) {
             System.out.println("Показатель привышен. Проверьте данные.");

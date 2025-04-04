@@ -1,19 +1,32 @@
-public class Bowl extends Cat {
+public class Bowl {
 
     int food;
+    private int appetite;
+    private boolean hunger;
 
-    public Bowl(String name, int appetite, boolean hunger) {
-        super(name, appetite, hunger);
+    public Bowl(int food) {
         this.food = food;
     }
 
-    public void takeFood() {
+    public void takeFood(int appetite) {
         if (food >= appetite) {
             food -= appetite;
-            System.out.println("В миске осталось: " + food + " еды");
-        } else if (food <= 0) {
-            System.out.println("Миска пуста. Добавьте корм!");
+        } else {
+            System.out.println("В миске мало еды или она закончилась.");
         }
+    }
+
+    public void addFood(int eat) {
+        if (eat <= 0) {
+            System.out.println("НЕ корректно введено количество. проверьте данные.");
+        } else {
+            food += eat;
+            System.out.println("Было добавлено " + eat + " единиц еды");
+        }
+    }
+
+    public void infoBowl() {
+        System.out.println("Еды осталось в миске: " + food);
     }
 }
 
