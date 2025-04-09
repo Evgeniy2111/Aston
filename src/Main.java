@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 import static java.lang.Long.sum;
 
 public class Main {
@@ -29,25 +28,37 @@ public class Main {
 
         try {
             MyArray.myArraySize(myArrayCorrect);
-            System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " + MyArray.count );
+            System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " + MyArray.count);
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
         } catch (MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
         System.out.println();
+
         try {
             MyArray.myArraySize(myArray1);
-            System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " + MyArray.count );
+            System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " + MyArray.count);
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
         }
         System.out.println();
+
         try {
             MyArray.myArraySize(myArray3);
-            System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " +  MyArray.count);
-        } catch (MyArrayDataException exception) {
-            System.out.println(exception.getMessage());
+            System.out.println("Сумма числовыхх значений равна: " + MyArray.count);
+        } catch (MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            MyArray.myArraySize(myArrayCorrect);
+            System.out.println("Значение в заданной ячейке" + myArrayCorrect[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Данное значение выходит за пределы массива");
         }
     }
+
+
 }

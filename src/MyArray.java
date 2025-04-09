@@ -15,15 +15,16 @@ public class MyArray {
 
             for (int j = 0; j < array[i].length; j++) {
                 try {
+                    Integer.parseInt(array[i][j]);
                     count += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    throw new MyArrayDataException("Не верное значение " + "'" + array[i][j] + "'" +
-                            " в ячейке" + "[" + i + "]" + "[" + j + "]");
+                    System.out.println("Не верное значение " + "'" + array[i][j] + "'" +
+                                " в ячейке" + "[" + i + "]" + "[" + j + "]");
                 }
             }
+
+
         }
         return count;
     }
-
-
 }
