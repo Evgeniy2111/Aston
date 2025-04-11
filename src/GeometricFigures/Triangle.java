@@ -4,7 +4,7 @@ import static java.lang.Math.sqrt;
 
 public class Triangle extends GeometricFigures implements IntefaceParam {
 
-    double a, b, c;
+    private double a, b, c;
 
     public Triangle(double a, double b, double c, String fColor, String bColor) {
         super(fColor, bColor);
