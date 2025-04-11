@@ -3,8 +3,6 @@ package Animal;
 public class Bowl {
 
     int food;
-    private int appetite;
-    private boolean hunger;
 
     public Bowl(int food) {
         this.food = food;

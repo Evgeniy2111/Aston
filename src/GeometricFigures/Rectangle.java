@@ -1,8 +1,8 @@
 package GeometricFigures;
 
-public class Rectangle extends GeometricFigures implements PerimetrArea, ColorInfo {
+public class Rectangle extends GeometricFigures implements IntefaceParam {
 
-    double a, b;
+    private double a, b;
 
     public Rectangle(double a, double b, String fColor, String bColor) {
         super(fColor, bColor);

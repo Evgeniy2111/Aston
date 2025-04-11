@@ -7,7 +7,7 @@ public class Animal {
 
     public Animal(String name) {
         this.name = name;
-        totalCount = totalCount + 1;
+        totalCount++;
     }
 
     public void run(int run) {

@@ -1,8 +1,8 @@
 package GeometricFigures;
 
-public class Сircle extends GeometricFigures implements PerimetrArea, ColorInfo {
+public class Сircle extends GeometricFigures implements IntefaceParam {
 
-    double radius;
+    private double radius;
 
     public Сircle(double radius, String fColor, String bColor) {
         super(fColor, bColor);
@@ -38,6 +38,4 @@ public class Сircle extends GeometricFigures implements PerimetrArea, ColorInfo
     public String getBColor() {
         return bColor;
     }
-
-
 }

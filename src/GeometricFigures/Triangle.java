@@ -2,7 +2,7 @@ package GeometricFigures;
 
 import static java.lang.Math.sqrt;
 
-public class Triangle extends GeometricFigures implements PerimetrArea, ColorInfo {
+public class Triangle extends GeometricFigures implements IntefaceParam {
 
     double a, b, c;
 
@@ -20,7 +20,8 @@ public class Triangle extends GeometricFigures implements PerimetrArea, ColorInf
 
     @Override
     public double getArea() { //формула Герона
-        return sqrt(((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c));
+         double s =  getPerimetr()/2;
+         return sqrt(s*(s - a) * (s -b) * (s - c));
     }
 
     @Override
