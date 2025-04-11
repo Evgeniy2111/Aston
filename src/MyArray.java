@@ -17,13 +17,11 @@ public class MyArray {
                 try {
                     Integer.parseInt(array[i][j]);
                     count += Integer.parseInt(array[i][j]);
+
                 } catch (NumberFormatException e) {
-                    System.out.println("Не верное значение " + "'" + array[i][j] +
-                            "'" + " в ячейке" + "[" + i + "]" + "[" + j + "]");
+                    throw new MyArrayDataException("Не верное значение " + "'" + array[i][j] + "'" + " в ячейке" + "[" + i + "]" + "[" + j + "]");
                 }
             }
-
-
         }
         return count;
     }
