@@ -17,13 +17,13 @@ public class NumbersActionTest {
         Assertions.assertEquals(NumbersAction.getResoult(a, 5, "-"), d);
     }
     @ParameterizedTest
-    @CsvSource({"0,5", "-1,-5", "5,25"})
+    @CsvSource({"0,0", "-1,-5", "5,25"})
     public void validateNumbersAction2(int a, int d) {
         Assertions.assertEquals(NumbersAction.getResoult(a, 5, "*"), d);
     }
 
     @ParameterizedTest
-    @CsvSource({"0,5", "-10,-2", "5,1"})
+    @CsvSource({"0,0", "-10,-2", "5,1"})
     public void validateNumbersAction3(int a, int d) {
         Assertions.assertEquals(NumbersAction.getResoult(a, 5, "/"), d);
     }

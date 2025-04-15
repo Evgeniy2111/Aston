@@ -13,9 +13,9 @@ public class TriangleArea {
             System.out.println("На ноль нелья умножать");
         }
 
-        /*if ((a + b =c) || (a + c = b) || (b + c = a) ) {
+        if (a + b <=c || a + c <= b || b + c <= a ) {
             System.out.println("Не верно заданы стороны в треугольлнике");
-        }*/
+        }
         double s = (a + b + c) / 2;
 
         System.out.println(sqrt(s * (s - a) * (s - b) * (s - c)));
