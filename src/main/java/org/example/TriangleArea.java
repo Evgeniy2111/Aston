@@ -7,14 +7,14 @@ public class TriangleArea {
     public static double getArea(int a, int b, int c) {
 
         if (a < 0 || b < 0 || c < 0) {
-            System.out.println("Отрицательные значения не допустимы");
+            throw new IllegalArgumentException("Стороны треугольника должны быть положительными числами");
         }
         if (a == 0 || b == 0 || c == 0) {
-            System.out.println("На ноль нелья умножать");
+            throw new IllegalArgumentException("На ноль нелья умножать");
         }
 
         if (a + b <=c || a + c <= b || b + c <= a ) {
-            System.out.println("Не верно заданы стороны в треугольлнике");
+            throw new IllegalArgumentException("Не верно заданы стороны в треугольлнике");
         }
         double s = (a + b + c) / 2;
 
