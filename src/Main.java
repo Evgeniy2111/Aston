@@ -1,7 +1,3 @@
-import java.util.Arrays;
-
-import static java.lang.Long.sum;
-
 public class Main {
     public static void main(String[] args) throws MyArraySizeException, MyArrayDataException {
 //есть правильный массив
@@ -16,12 +12,11 @@ public class Main {
         try {
             MyArray.myArraySize(myArrayCorrect);
             System.out.println("Все данные верны." + "\nСумма числовыхх значений равна: " + MyArray.count);
-        } catch (MyArraySizeException e) {
-            System.out.println(e.getMessage());
-        } catch (MyArrayDataException e) {
+        } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
         System.out.println();
+
 // в данном блоке не полное количество строк и задействуется catch
         try {
             MyArray.myArraySize(myArray1);
