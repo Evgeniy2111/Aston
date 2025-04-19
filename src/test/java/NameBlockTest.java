@@ -1,17 +1,12 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import javax.lang.model.element.Element;
 
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 /*Автотест для проверки названия блока "Онлайн пополнение без комиссии"
  *на сайте МТС.
  * Проверка названия указанного блока.
@@ -29,22 +24,23 @@ public class NameBlockTest {
     @BeforeEach
     void setup() {
         WebDriver driver = WebDriverManager.chromedriver().create();
+        //пишем время задержки
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //вводим адрес страницы, для передачи драйверу
+        driver.get("http://mts.by");
     }
 
     @Test
-    public void testNameBlock() throws InterruptedException {
-        //вводим адрес страницы, для передачи драйверу
-        driver.get("https://www.mts.by/");
-        //пишем время задержки
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        //ищем блок с названием "Онлайн пополнение без комиссий", через xpath
-        driver.findElement(By.xpath("/html/body/div[6]/main/div/div[3]/div[1]/div/div/div[2]/section/div/h2/text()[1]"));
+    public void testNameBlock(){
+        String nameBlock = "Онлайн пополнение\nбез комиссии";
+        Assertions.assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")), "название заголовка не совпадает");
     }
 
     @AfterEach
     public void andTest() {
-        if (driver != null) {
-            driver.quit();
-        }
+       driver.quit();
+       driver.close();
     }
 }
