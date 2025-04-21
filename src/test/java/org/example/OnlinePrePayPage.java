@@ -62,7 +62,7 @@ public class OnlinePrePayPage {
 
     public OnlinePrePayPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public void start() {
