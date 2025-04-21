@@ -84,7 +84,8 @@ public class MTSTest_1 {
         continueButton.click();
 
         //пробую вывести страницу следующую, после нажатия на кнопку "Продолжить"
-        //boolean resoultContinue = driver.findElement(By.className("app-wrapper__content-container app-wrapper__content-container_full")).
+        Assertions.assertTrue(equals(driver.findElement(By.xpath("//div[class='app-wrapper__content-container app-wrapper__content-container_full']"))));
+
     }
 
     @AfterAll
