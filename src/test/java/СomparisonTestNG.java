@@ -6,12 +6,12 @@ public class СomparisonTestNG {
 
     @Test// на проверку значения "меньше", с положительным значением
     public void validateComparisonTest() {
-        Assert.assertEquals(Сomparison.getComparison(5, 6),  5 < 6);
+        Assert.assertEquals(Сomparison.getComparison(5, 6), 5 < 6);
     }
 
     @Test// на проверку значения "меньше", с отрицательным значением
     public void validateComparisonTest01() {
-        Assert.assertEquals(Сomparison.getComparison(-5, 6),  -5 < 6);
+        Assert.assertEquals(Сomparison.getComparison(-5, 6), -5 < 6);
     }
 
     @Test// на проверку значения "больше", с положительным  значением
@@ -26,7 +26,7 @@ public class СomparisonTestNG {
 
     @Test//проверка на значение "равно", при положительных числах
     public void validateComparisonTest2() {
-        Assert.assertEquals(Сomparison.getComparison(5, 5),  5 == 5);
+        Assert.assertEquals(Сomparison.getComparison(5, 5), 5 == 5);
     }
 
     @Test//проверка на значение "равно", при отрицательлных числах
