@@ -8,7 +8,7 @@ public class NumbersActionTest {
     @ParameterizedTest
     @CsvSource({"0,5", "-1,4", "5,10"})
     public void validateNumbersAction(int a, int d) {
-        Assertions.assertEquals(NumbersAction.getResoult(a, 5, "+"),d);
+        Assertions.assertEquals(NumbersAction.getResoult(a, 5, "+"), d);
     }
 
     @ParameterizedTest
@@ -16,6 +16,7 @@ public class NumbersActionTest {
     public void validateNumbersAction1(int a, int d) {
         Assertions.assertEquals(NumbersAction.getResoult(a, 5, "-"), d);
     }
+
     @ParameterizedTest
     @CsvSource({"0,0", "-1,-5", "5,25"})
     public void validateNumbersAction2(int a, int d) {
