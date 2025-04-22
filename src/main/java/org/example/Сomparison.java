@@ -8,14 +8,15 @@ public class Сomparison {
         boolean resoult;
         if (a == b) {
             resoult = a == b;
-            System.out.println("a" + "=" + "b");
+           // System.out.println("a" + "=" + "b");
         } else if (a > b) {
             resoult = a > b;
-            System.out.println("a" + ">" + "b");
+            //System.out.println("a" + ">" + "b");
         } else {
             resoult = a < b;
-            System.out.println("a" + "<" + "b");
+           // System.out.println("a" + "<" + "b");
         }
+        System.out.println(resoult);
         return resoult;
     }
 }

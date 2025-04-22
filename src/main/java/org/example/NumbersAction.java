@@ -10,23 +10,47 @@ public class NumbersAction {
 
         if (s == "+") {// сумма
             resoult = a + b;
-        }
-        if (s == " - ") {// вычетание
+        } else if (s == " - ") {// вычетание
             resoult = a - b;
-        }
-        if (s == "*") {// умножение
+        } else if (s == "*") {// умножение
             if (a == 0 || b == 0) {
-                System.out.println("На ноль нелья умножать");
+                throw new ArithmeticException("На ноль нелья умножать");
             }
             resoult = a * b;
-        }
-        if (s == "/") {// деление
+        } else if (s == "/") {// деление
             if (a == 0 || b == 0) {
-                System.out.println("На ноль нелья делить");
+                throw new ArithmeticException("На ноль нелья делить");
             }
             resoult = a / b;
         }
         System.out.println("Resoult: " + resoult);
         return resoult;
     }
+//второй способ написания данного задания через кейсы
+    /*public static void getResoult1(int a, int b, String s) {
+        int i = 0;
+        switch (s) {
+            case "+":
+                i = a + b;
+                break;
+            case "-":
+                i = a - b;
+                break;
+            case "*":
+                if (a == 0 || b == 0) {
+                    throw new ArithmeticException("На ноль нельзя умножать");
+                }
+                i = a * b;
+                break;
+            case "/":
+                if (a == 0 || b == 0) {
+                    throw new ArithmeticException("На ноль нельзя делить");
+                }
+                i = a / b;
+                break;
+            default:
+                System.out.println("Введите корректный знак: '+','-','*'.'/' ");
+        }
+        System.out.println("Результат: " + i);
+    }*/
 }

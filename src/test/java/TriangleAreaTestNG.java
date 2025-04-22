@@ -12,7 +12,7 @@ public class TriangleAreaTestNG {
     //тест на опреденение условия "сторона равна нулю"
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testTriangleAreaTest1() {
-        Assert.assertEquals(TriangleArea.getArea(0, 4, 5), 0);
+        Assert.assertEquals(TriangleArea.getArea(0, 4, 5), 2);
     }
 
     //тест на не правильне значения сторон в треугольнике
