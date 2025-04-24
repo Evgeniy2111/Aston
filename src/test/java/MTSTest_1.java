@@ -39,18 +39,18 @@ public class MTSTest_1 {
     @Test
     public void testNameBlock() {
         String nameBlock = "Онлайн пополнение ";
-        assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2")), "название заголовка не совпадает");
+       // assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")), "название заголовка не совпадает");
+        Assertions.assertEquals(nameBlock,driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")).getText(), "название заголовка не совпадает");
     }
+
 
     @Test
     public void testLogotips() {
-        String[] logoText = {"Visa", "Verified by Visa", "Master Card", "MasterCard Secure Code", "Белкарт"};
-
-        for (String Text : logoText) {
-            List<WebElement> logos = driver.findElements(By.xpath("//section[@class='pay']/div/div[2]/ul/li, '" + Text + "')]"));
-            Text.equals("Логотип платежной системы '" + logos + "' не найден!");
-            System.out.println("Логотип '" + logos + "' найден.");
-        }
+        Assertions.assertTrue(driver.findElement(By.xpath("//img[contains(@src, 'visa-verified')]")).isDisplayed(), "Логотип 'Visa' не отображается");
+        Assertions.assertTrue(driver.findElement(By.xpath("//img[contains(@src, 'pay/mastercard.svg')]")).isDisplayed(), "Логотип 'MasterCard' не отображается");
+        Assertions.assertTrue(driver.findElement(By.xpath("//img[contains(@src, 'visa-verified')]")).isDisplayed(), "Логотип 'Verified By Visa' не отображается");
+        Assertions.assertTrue(driver.findElement(By.xpath("//img[contains(@src, 'mastercard-secure')]")).isDisplayed(), "Логотип 'MasterCard Secure Code' не отображается");
+        Assertions.assertTrue(driver.findElement(By.xpath("//div[@class='pay__partners']/ul/li[4]/img")).isDisplayed(), "Логотип 'Белкарт' не отображается");
     }
 
     @Test
@@ -76,18 +76,19 @@ public class MTSTest_1 {
         WebElement resultOperation = payBlock.findElement(By.xpath("//section[@class='pay']/div/div[1]/div[1]/div[2]/ul/li[1]/p"));
         operatoin.click();
         //вводим номер мобильного телефона
-        WebElement numberPhone = payBlock.findElement(By.xpath("//section[@class='pay__forms']/form[1]/div[1]/input"));
+        WebElement numberPhone = payBlock.findElement(By.xpath("//input[@placeholder='Номер телефона']"));
+        operatoin.click();
         numberPhone.sendKeys("297777777");
         //вводим сумму пополнения, в руб
         WebElement count = payBlock.findElement(By.xpath("//form[@class='pay-form opened']/div[2]/input"));
+        operatoin.click();
         count.sendKeys("1");
         //нажимаем кнопку продолжить
-        WebElement continueButton = payBlock.findElement(By.xpath("//button[@class='button button__default']"));
+        WebElement continueButton = payBlock.findElement(By.xpath("//form[@class='pay-form opened']/button[@class='button button__default ']"));
         continueButton.click();
-
         //пробую вывести страницу следующую, после нажатия на кнопку "Продолжить"
-        Assertions.assertTrue(equals(driver.findElement(By.xpath("//div[class='app-wrapper__content-container app-wrapper__content-container_full']"))));
-
+        Assertions.assertTrue(driver.findElement(By.xpath("//div[@class='bepaid-app']")).isDisplayed());
+       //html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[1]/div[2]/form[1]/div[1]
     }
 
     @AfterAll
