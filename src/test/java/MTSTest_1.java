@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,8 +38,8 @@ public class MTSTest_1 {
     @Test
     public void testNameBlock() {
         String nameBlock = "Онлайн пополнение ";
-       // assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")), "название заголовка не совпадает");
-        Assertions.assertEquals(nameBlock,driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")).getText(), "название заголовка не совпадает");
+        // assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")), "название заголовка не совпадает");
+        Assertions.assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2[1]")).getText(), "название заголовка не совпадает");
     }
 
 
@@ -88,7 +87,7 @@ public class MTSTest_1 {
         continueButton.click();
         //пробую вывести страницу следующую, после нажатия на кнопку "Продолжить"
         Assertions.assertTrue(driver.findElement(By.xpath("//div[@class='bepaid-app']")).isDisplayed());
-       //html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[1]/div[2]/form[1]/div[1]
+        //html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[1]/div[2]/form[1]/div[1]
     }
 
     @AfterAll
