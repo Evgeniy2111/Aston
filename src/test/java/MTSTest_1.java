@@ -87,7 +87,6 @@ public class MTSTest_1 {
         continueButton.click();
         //пробую вывести страницу следующую, после нажатия на кнопку "Продолжить"
         Assertions.assertTrue(driver.findElement(By.xpath("//div[@class='bepaid-app']")).isDisplayed());
-        //html/body/div[6]/main/div/div[4]/div[1]/div/div/div[2]/section/div/div[1]/div[2]/form[1]/div[1]
     }
 
     @AfterAll
