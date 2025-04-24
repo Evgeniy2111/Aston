@@ -1,11 +1,13 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.*;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -35,7 +37,7 @@ public class MTSTest_1 {
     }
 
     @Test
-    public void testNameBlock(){
+    public void testNameBlock() {
         String nameBlock = "Онлайн пополнение ";
         assertEquals(nameBlock, driver.findElement(By.xpath("//section[@class='pay']/div/h2")), "название заголовка не совпадает");
     }
@@ -61,7 +63,7 @@ public class MTSTest_1 {
 
         //второй вариант
         /*
-        * */
+         * */
     }
 
     @Test
@@ -77,7 +79,7 @@ public class MTSTest_1 {
         WebElement numberPhone = payBlock.findElement(By.xpath("//section[@class='pay__forms']/form[1]/div[1]/input"));
         numberPhone.sendKeys("297777777");
         //вводим сумму пополнения, в руб
-        WebElement count = payBlock.findElement(By.xpath( "//form[@class='pay-form opened']/div[2]/input"));
+        WebElement count = payBlock.findElement(By.xpath("//form[@class='pay-form opened']/div[2]/input"));
         count.sendKeys("1");
         //нажимаем кнопку продолжить
         WebElement continueButton = payBlock.findElement(By.xpath("//button[@class='button button__default']"));
@@ -90,9 +92,8 @@ public class MTSTest_1 {
 
     @AfterAll
     public static void endTest() {
-       driver.close();
+        driver.close();
     }
-
 
 
 }
