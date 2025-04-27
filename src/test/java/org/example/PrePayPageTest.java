@@ -1,15 +1,9 @@
 package org.example;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.ConfingTest;
-import org.example.PrePayPage;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
 
-import java.util.concurrent.TimeUnit;
-
-public class PrePayPageTest  extends ConfingTest {
+public class PrePayPageTest extends ConfingTest {
 
     @Test
     public void booleanStringTest() {
