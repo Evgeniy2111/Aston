@@ -9,16 +9,16 @@ import org.openqa.selenium.support.PageFactory;
 public class PrePayPage extends WebPage {
     private WebDriver driver;
 
-    @FindBy(xpath = "//button[@class='select__header']")
+    @FindBy(xpath = "//button[@class='select__header']")//селектор выбора услуги
     private WebElement buttonHolder;
 
-    @FindBy(xpath = "//button[@class='button button__default']")
+    @FindBy(xpath = "//button[@class='button button__default']")// кнопка Продолжить
     private WebElement buttonCont;
 
-    @FindBy(xpath = "//div[@class='app-wrapper__content-container app-wrapper__content-container_full']")
+    @FindBy(xpath = "//iframe[@class='bepaid-iframe']")//блок оплаты
     private WebElement payPage;
 
-    @FindBy(xpath = "//section[@class='pay']")
+    @FindBy(xpath = "//section[@class='pay']")//блок услуг
     private WebElement list;
 
     //блок услуги связи
@@ -79,7 +79,7 @@ public class PrePayPage extends WebPage {
 
     public void booleanString() {
 
-        list.click();
+        list.isDisplayed();
         buttonHolder.click();
         serviceField.click();
         Assertions.assertEquals("Услуги связи", serviceField.getText(), "Строка (Услуга связи назв.) не совпадает");
