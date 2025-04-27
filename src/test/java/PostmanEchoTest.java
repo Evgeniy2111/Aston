@@ -47,15 +47,15 @@ public class PostmanEchoTest {
         given()
                 .spec(requestSpec)
                 .contentType(ContentType.TEXT)
-                .body("good luck")
+                .body("This is expected to be sent back as part of response body.")
                 .when()
                 .post("/post")
                 .then()
                 .spec(responseSpec)
-                .body("headers.content-length", equalTo(String.valueOf("good luck".length())))
+                .body("headers.content-length", equalTo(String.valueOf("This is expected to be sent back as part of response body.".length())))
                 .body("headers.content-type", equalTo("text/plain; charset=ISO-8859-1"))
                 .body("headers.accept-encoding", equalTo("gzip,deflate"))
-                .body("data", equalTo("good luck"))
+                .body("data", equalTo("This is expected to be sent back as part of response body."))
                 .body("url", equalTo("https://postman-echo.com/post"));
     }
 
