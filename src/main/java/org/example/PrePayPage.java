@@ -75,11 +75,11 @@ public class PrePayPage extends WebPage {
 
     public PrePayPage() {
         PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
     public void booleanString() {
 
-        list.isDisplayed();
         buttonHolder.click();
         serviceField.click();
         Assertions.assertEquals("Услуги связи", serviceField.getText(), "Строка (Услуга связи назв.) не совпадает");
@@ -107,6 +107,7 @@ public class PrePayPage extends WebPage {
     }
 
     public void inputDataUser(String phone, String sum) {
+
         buttonHolder.click();
         serviceField.click();
         mobilePhone.click();
