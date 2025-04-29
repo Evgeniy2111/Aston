@@ -11,27 +11,6 @@ import java.time.Duration;
 
 public class PrePayPage extends BaseSeleniumPage {
 
-    @FindBy(xpath = "//section[@class='pay']/div/h2[1]")
-    private WebElement header;
-
-    @FindBy(xpath = "//img[contains(@src, 'visa-verified')]")
-    private WebElement visaLogo;
-
-    @FindBy(xpath = "//img[contains(@src, 'visa-verified')]")
-    private WebElement verifiedByVisaLogo;
-
-    @FindBy(xpath = "//img[contains(@src, 'pay/mastercard.svg')]")
-    private WebElement mastercardLogo;
-
-    @FindBy(xpath = "//img[contains(@src, 'mastercard-secure')]")
-    private WebElement mastercardSecureCodeLogo;
-
-    @FindBy(xpath = "//div[@class='pay__partners']/ul/li[4]/img")
-    private WebElement belCardLogo;
-
-    @FindBy(xpath = "//a[text()='Подробнее о сервисе']")
-    private WebElement moreAboutServiceLink;
-
     @FindBy(xpath = "//input[@placeholder='Номер телефона']")
     private WebElement phoneInput;
 

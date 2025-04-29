@@ -13,13 +13,12 @@ public class OnlinePaymentTest extends BaseDriverSetUp {
 
     @Test
     @DisplayName("Проверка элементов окна оплаты")
-    public void payWindowInfoCheck() throws InterruptedException {
+    public void payWindowInfoCheck() {
         String phone = "297777777";
         String sum = "10";
         PrePayPage homePage = new PrePayPage();
         homePage.inputData(phone, sum);
         PayWindowPage payWindowPage = new PayWindowPage();
-        Thread.sleep(7_000);
         payWindowPage.payWindowInfo(phone, sum);
     }
 }

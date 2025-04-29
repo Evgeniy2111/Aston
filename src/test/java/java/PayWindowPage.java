@@ -32,12 +32,6 @@ public class PayWindowPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div/label [@class='ng-tns-c2312288139-3 ng-star-inserted']")
     private WebElement namePlaceholder;
 
-    //@FindBy(xpath = "//button[@aria-label='Google Pay']")
-    private WebElement googlePayButton;
-
-   // @FindBy(xpath = "//button[@aria-label='Yandex Pay']")
-    private WebElement yandexPayButton;
-
     @FindBy(xpath = "//img[contains(@src, 'visa-system')]")
     private WebElement visaLogo;
 
