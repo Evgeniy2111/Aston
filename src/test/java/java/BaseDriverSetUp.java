@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseDriverSetUp {
-    protected static WebDriver driver;
+    public static WebDriver driver;
 
 
     @BeforeAll
